@@ -69,10 +69,11 @@ output_file.close()
 
 
 # RESOURCES:
-# The below links were used to help me complete this problem
-# I spent 5 hours on this problem.
-# Please see the screen shots of my debugging as I did my best to fully
-# understand how the recursion worked.
+# The below links were used to help me complete this problem.
+# I spent an extensive amount of time on this problem trying to fully
+# understand how the recursion worked. Please see my screen shots in the
+# pdf of my debugging session. I stepped through the program to try and see
+# how the recursion returned and with what elements.
 # https://www.hackerearth.com/practice/algorithms/sorting/merge-sort/tutorial/
 # https://pythonandr.com/2015/07/05/the-merge-sort-python-code/
 # http://mooreccac.com/kcppdoc/Recursion.htm
