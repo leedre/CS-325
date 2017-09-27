@@ -71,12 +71,12 @@ for x in range(7):
     # number of elements in array
     elements += 1000
 
-    # randomly generate the array to be sorted
-    rand_list = [int(1000*random.random()) for i in xrange(elements)]
+    # randomly generate arrays to be sorted for mergesort and insertsort
+    rand_list_mergesort = [int(1000*random.random()) for i in xrange(elements)]
+    rand_list_insertsort = rand_list_mergesort
 
     # wrap mergesort function
-    wrapped = wrapper(mergesort, rand_list)
-
+    wrapped = wrapper(mergesort, rand_list_mergesort)
     # time mergesort function
     time_taken = timeit.timeit(wrapped, number=1)
 
@@ -89,8 +89,7 @@ for x in range(7):
     mergesort_data.append(sec)
 
     # wrap insertsort function
-    wrapped = wrapper(insertsort, rand_list)
-
+    wrapped = wrapper(insertsort, rand_list_insertsort)
     # time insertsort function
     time_taken = timeit.timeit(wrapped, number=1)
 
