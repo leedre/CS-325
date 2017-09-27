@@ -109,6 +109,6 @@ print "Insert Sort"
 print insertsort_data
 
 
-
-# RESOURCES
+# RESOURCES:
+# The below link was used to help me complete this problem.
 # http://pythoncentral.io/time-a-python-function/
