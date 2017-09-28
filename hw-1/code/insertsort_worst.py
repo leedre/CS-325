@@ -36,7 +36,7 @@ elements = 0
 # array sizes
 for x in range(7):
     # number of elements in array
-    elements += 2000
+    elements += 1000
     # generate best and worst arrays to be sorted for insertsort
     best_list = range(elements)
     worst_list = list(reversed(best_list))

@@ -69,7 +69,7 @@ elements = 0
 # array sizes
 for x in range(7):
     # number of elements in array
-    elements += 2000
+    elements += 1000
 
     # randomly generate arrays to be sorted for mergesort and insertsort
     rand_list_mergesort = [int(1000*random.random()) for i in xrange(elements)]

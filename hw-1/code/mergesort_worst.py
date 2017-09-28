@@ -92,7 +92,7 @@ elements = 0
 # array sizes, best and worst types
 for x in range(7):
     # number of elements in array
-    elements += 2000
+    elements += 1000
 
     # best order
     best_list = range(elements)
