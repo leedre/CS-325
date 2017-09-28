@@ -86,16 +86,13 @@ mergesort_data_best = []
 mergesort_data_worst = []
 
 # number of elements to be in random array
-elements = 0
+elements = [1000,2000,4000,8000,16000,32000,64000]
 
 # loop 7 times, timing the run time of the merge sort algorithm for 7 different
 # array sizes, best and worst types
 for x in range(7):
-    # number of elements in array
-    elements += 1000
-
     # best order
-    best_list = range(elements)
+    best_list = range(elements[x])
     # worst order
     worst_list = worst(best_list)
 
@@ -106,7 +103,7 @@ for x in range(7):
 
     # log number of elements and time taken for mergesort
     n = "n = "
-    n += str(elements)
+    n += str(elements[x])
     mergesort_data_best.append(n)
     sec = "sec = "
     sec += str(time_taken)
@@ -119,7 +116,7 @@ for x in range(7):
 
     # log number of elements and time taken for mergesort
     n = "n = "
-    n += str(elements)
+    n += str(elements[x])
     mergesort_data_worst.append(n)
     sec = "sec = "
     sec += str(time_taken)

@@ -63,16 +63,13 @@ mergesort_data = []
 insertsort_data = []
 
 # number of elements to be in random array
-elements = 0
+elements = [1000,2000,4000,8000,16000,32000,64000]
 
 # loop 7 times, timing the run time of each sort algorithm for 7 different
 # array sizes
 for x in range(7):
-    # number of elements in array
-    elements += 1000
-
     # randomly generate arrays to be sorted for mergesort and insertsort
-    rand_list_mergesort = [int(1000*random.random()) for i in xrange(elements)]
+    rand_list_mergesort = [int(1000*random.random()) for i in xrange(elements[x])]
     rand_list_insertsort = rand_list_mergesort
 
     # wrap mergesort function
@@ -82,7 +79,7 @@ for x in range(7):
 
     # log number of elements and time taken for mergesort
     n = "n = "
-    n += str(elements)
+    n += str(elements[x])
     mergesort_data.append(n)
     sec = "sec = "
     sec += str(time_taken)
@@ -95,7 +92,7 @@ for x in range(7):
 
     # log number of elements and time taken for insertsort
     n = "n = "
-    n += str(elements)
+    n += str(elements[x])
     insertsort_data.append(n)
     sec = "sec = "
     sec += str(time_taken)

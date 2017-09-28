@@ -30,15 +30,13 @@ insertsort_data_best = []
 insertsort_data_worst = []
 
 # number of elements to be in random array
-elements = 0
+elements = [1000,2000,4000,8000,16000,32000,64000]
 
 # loop 7 times, timing the run time of each sort algorithm for 7 different
 # array sizes
 for x in range(7):
-    # number of elements in array
-    elements += 1000
     # generate best and worst arrays to be sorted for insertsort
-    best_list = range(elements)
+    best_list = range(elements[x])
     worst_list = list(reversed(best_list))
 
     # wrap mergesort function
@@ -48,7 +46,7 @@ for x in range(7):
 
     # log number of elements and time taken for insertsort - best array
     n = "n = "
-    n += str(elements)
+    n += str(elements[x])
     insertsort_data_best.append(n)
     sec = "sec = "
     sec += str(time_taken)
@@ -61,7 +59,7 @@ for x in range(7):
 
     # log number of elements and time taken for insertsort - worst array
     n = "n = "
-    n += str(elements)
+    n += str(elements[x])
     insertsort_data_worst.append(n)
     sec = "sec = "
     sec += str(time_taken)
