@@ -63,7 +63,7 @@ mergesort_data = []
 insertsort_data = []
 
 # number of elements to be in random array
-elements = [1000,2000,4000,8000,16000,32000,64000]
+elements = [100,200,300,500,1000,1200,1600]
 
 # loop 7 times, timing the run time of each sort algorithm for 7 different
 # array sizes

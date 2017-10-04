@@ -1,48 +1,37 @@
 '''
 Jon-Eric Cook
 CS-325
-Homework #1
-This program demonstrates the merger sort algorithm. It does this by opening
-a file named data.txt, reading in data, sorting said data via the merge sort
-algorithm and then outputing the results to a file named merge.out.
+Homework #2
+This program demonstrates the stooge sort algorithm. It does this by first
+checking if the first element is larger that the element at the end. If this is
+true then it swaps them. If there are 3 or more elements in the array, it
+proceeds to sort the first 2/3s of the array. It then sorts the final 2/3 of
+the array. It the goes back and sorts the first first 2/3 of the array again.
+This program will be reading in the data to be sorted from a file names data.txt.
 '''
 
-# merge algorithm
-def merge(l,r):
-    # empty array to be used to hold sorted values
-    s = []
-    # append to s array until either l or r array is empty
-    while len(l) != 0 and len(r) != 0:
-        if l[0] < r[0]:
-            s.append(l[0])
-            l.remove(l[0])
-        else:
-            s.append(r[0])
-            r.remove(r[0])
-    # add the remaining value to the s array
-    if len(l) == 0:
-        s += r
-    else:
-        s += l
-    return s
+# stoogeSort algorithm
+def stoogeSort(a,low,high):
+    # swaps elements
+    if a[low] > a[high]:
+        temp = a[low]
+        a[low] = a[high]
+        a[high] = temp
 
-# mergesort algorithm
-def mergesort(a):
-    # if the array has only one element, return it
-    if len(a) == 1:
-        return a
-    else:
-        # call mergesort on half of the current input array
-        mid = len(a)/2
-        l = mergesort(a[:mid])
-        r = mergesort(a[mid:])
-        return merge(l,r)
+    # if there are more than two elements in the array
+    if (high - low + 1) > 2:
+        fraction = (int)((high - low + 1.0)/3)
+        stoogeSort(a,low,high-fraction)
+        stoogeSort(a,low+fraction,high)
+        stoogeSort(a,low,high-fraction)
+
+    return a
 
 # open the input file
 input_file = open('data.txt','r')
 
 # create the output file
-output_file = open('merge.out','w')
+output_file = open('stooge.out','w')
 
 # convert the string to a array of characters
 line = input_file.readline().split(' ')
@@ -53,8 +42,8 @@ while line != ['']:
     # discard the first number
     line = line[1:]
 
-    # call mergesort
-    s = mergesort(line)
+    # call stoogeSort
+    s = stoogeSort(line,0,len(line)-1)
 
     # output the sorted array to the output file
     output_file.write(' '.join(map(str,s)))
@@ -66,14 +55,3 @@ while line != ['']:
 # close the files
 input_file.close()
 output_file.close()
-
-
-# RESOURCES:
-# The below links were used to help me complete this problem.
-# I spent an extensive amount of time on this problem trying to fully
-# understand how the recursion worked. Please see my screen shots in the
-# pdf of my debugging session. I stepped through the program to try and see
-# how the recursion returned and with what elements.
-# https://www.hackerearth.com/practice/algorithms/sorting/merge-sort/tutorial/
-# https://pythonandr.com/2015/07/05/the-merge-sort-python-code/
-# http://mooreccac.com/kcppdoc/Recursion.htm
