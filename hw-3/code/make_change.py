@@ -18,7 +18,7 @@ def make_change(V,A):
 
     # steps through the array of coins and makes change if possible
     for j in range(len(V)):
-        for i in range(1,A):
+        for i in range(1,A+1):
             # if the number for change to be made for is greater than the
             # selected coin value
             if i >= V[j]:
