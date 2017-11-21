@@ -1,0 +1,7 @@
+test-input-1.txt  ->  -4.3e-05 sec
+test-input-2.txt  ->  -5.6e-05 sec
+test-input-3.txt  ->  0.019868 sec
+test-input-4.txt  ->  0.129994 sec
+test-input-5.txt  ->  0.919467 sec
+test-input-6.txt  ->  7.24966 sec
+test-input-7.txt  ->  90.7097 sec
