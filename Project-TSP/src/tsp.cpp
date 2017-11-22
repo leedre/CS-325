@@ -1,15 +1,30 @@
+/**************************************************************************
+ * 
+ * ** Author:   Jon-Eric Cook
+ *              Shannon Jeffers
+ *              Peter Moldenhauer
+ * 
+ * ** Date: 12-01-17
+ * 
+ * ** Description: Project TSP - This program makes an attempt to solve the 
+ *                              Traveling Salesman Problem.
+ *
+ ***************************************************************************/
+
 #include <iostream>
 #include <fstream>
 #include <limits>
 #include <vector>
 #include <math.h>
 
+// struct for city information
 struct city {
     int id;
     int x;
     int y;
 };
 
+// calculates the distance between CityA and CityB
 int calculate_distance_between_cities(std::vector<struct city>& cities, int cityA_id, int cityB_id){
     double distance_between_cities = sqrt( pow(cities[cityB_id].x - cities[cityA_id].x, 2) +
                                            pow(cities[cityB_id].y - cities[cityA_id].y, 2) );
@@ -17,6 +32,7 @@ int calculate_distance_between_cities(std::vector<struct city>& cities, int city
     return rounded_distance_between_cities;
 }
 
+// gets the distances between all the available cities
 void get_distances_between_cities(std::vector<int>& distance_between_cities, std::vector<struct city>& cities) {
     int distance;
     for (int i = 0; i < cities.size(); i++){
