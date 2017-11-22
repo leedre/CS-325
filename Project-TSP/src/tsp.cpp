@@ -32,7 +32,7 @@ int calculate_distance_between_cities(std::vector<struct city>& cities, int city
     return rounded_distance_between_cities;
 }
 
-// gets the distances between all the available cities
+// gets the distances between all the cities
 void get_distances_between_cities(std::vector<int>& distance_between_cities, std::vector<struct city>& cities) {
     int distance;
     for (int i = 0; i < cities.size(); i++){
@@ -43,6 +43,7 @@ void get_distances_between_cities(std::vector<int>& distance_between_cities, std
     }
 }
 
+// checks if a city has been visited already
 bool has_been_visited(std::vector<int>& visited_cities, int city_id){
     for (int i = 0; i < visited_cities.size(); i++){
         if (visited_cities[i] == city_id)
@@ -51,9 +52,14 @@ bool has_been_visited(std::vector<int>& visited_cities, int city_id){
     return false;
 }
 
+// gets the city data from the file and puts it into a vector of struct type city
 void get_city_data(std::vector<struct city>& cities, std::string file_name) {
     std::ifstream file;
     file.open(file_name);
+    if (file.fail()) {
+        std::cout << "Couldn't open file!\n";
+        exit(1);
+    }
     std::string element;
     int city_data;
     int counter = 0;
@@ -78,6 +84,7 @@ void get_city_data(std::vector<struct city>& cities, std::string file_name) {
     file.close();
 }
 
+// outputs the visited cities to a file with .out appended to it
 void output_visited_cities(std::vector<int>& visited_cities, int distance_traveled, std::string file_name) {
     std::ofstream file;
     file.open(file_name+".tour");
@@ -88,6 +95,7 @@ void output_visited_cities(std::vector<int>& visited_cities, int distance_travel
     file.close();
 }
 
+// goes on a tour of the cities and calculates the distance traveled
 void take_a_tour(std::vector<int>& distance_between_cities, std::vector<int>& visited_cities, int number_of_cities, int& distance_traveled) {
     int starting_city = 11;
     visited_cities.push_back(starting_city);
@@ -110,6 +118,7 @@ void take_a_tour(std::vector<int>& distance_between_cities, std::vector<int>& vi
     }
 }
 
+// main program
 int main(int argc, char* argv[]) {
     clock_t clock_start = clock();
 
