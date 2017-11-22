@@ -1,10 +1,9 @@
 CXX = g++
 CXXFLAGS = -std=c++0x
 
-HEADERS = tsp.hpp
-SOURCES = main.cpp tsp.cpp
+SOURCES = tsp.cpp
 
-tsp: ${SOURCES} ${HEADERS}
+tsp: ${SOURCES}
 	${CXX} ${CXXFLAGS} ${SOURCES} -o tsp
 
 clean:
