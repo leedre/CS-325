@@ -6,8 +6,18 @@ INSTRUCTIONS
     HOW TO RUN  ->  tsp
         ./run-tsp.sh
 
+    OR
+        ./tsp <file-name>
+
+        EXAMPLE
+	        ./tsp test-input-1.txt
+    
+
     HOW TO RUN  ->  tsp-verifier.py
         ./run-tsp-verifier.sh
+
+    OR
+        Follow instructions in python files
 
 
 RESULTS
@@ -20,4 +30,3 @@ RESULTS
 
     Output file that contains the times for "tsp_example_x.txt" will have
     the file name of "tsp_example_times.txt"
-    
