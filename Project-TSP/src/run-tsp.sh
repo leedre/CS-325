@@ -5,7 +5,7 @@ do
 	file_name=tsp_example_${NUM}.txt
     ./tsp $file_name >> tsp_example_times.txt
 done
-for NUM in {1..7}
+for NUM in {2..8}
 do
 	file_name=test-input-${NUM}.txt
 	./tsp $file_name >> test-input-times.txt
